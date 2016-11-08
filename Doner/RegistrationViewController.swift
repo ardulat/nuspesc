@@ -25,6 +25,18 @@ class RegistrationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
+            if let user = user {
+                if user.email != "demo@gmail.com" {
+                    self.emailTextField.text = user.email
+                    self.passwordTextField.text = "qwerty123"
+                    self.performSegueWithIdentifier("SegueLoginToOverview", sender: self)
+                }
+            } else {
+                // No user is signed in.
+            }
+        }
+        
         loginButton.layer.borderWidth = 1
         loginButton.layer.borderColor = UIColor.whiteColor().CGColor
         loginButton.layer.cornerRadius = 5
