@@ -13,7 +13,7 @@ class MemberViewController: UIViewController {
     @IBOutlet weak var memberLabel: UILabel!
     @IBOutlet weak var textLabel: UITextView!
     
-    var text = "SPE is a place for all of today's industry professionals, regardless of experience or course of study. Although engineers are the core of SPE's membership, not all SPE members are engineers. SPE offers two types of membership: Professional and Student."
+    var text = "Step 1\n\nFollow the link bellow and register\nhttp://www.spe.org/join/\n\nStep 2\n\nSend your membership number on spe@nu.edu.kz\n\nStep 3\n\nBe an active member of NU SPE SC :)"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +25,10 @@ class MemberViewController: UIViewController {
         memberLabel.layer.addSublayer(bottomBorder)
         
         textLabel.text = text
+        textLabel.userInteractionEnabled = true // default: true
+        textLabel.editable = false // default: true
+        textLabel.selectable = true // default: true
+        textLabel.dataDetectorTypes = [.Link]
     }
 
     override func didReceiveMemoryWarning() {

@@ -83,7 +83,7 @@ class EventScoreboardViewController: UIViewController, UITableViewDelegate, UITa
         if index == 0 {
             cell.positionLabel.text = "#"
             cell.fullNameLabel.text = "Full Name"
-            cell.scoreLabel.text = "Total"
+            cell.scoreLabel.text = "Points"
         } else {
             cell.positionLabel.text = String(index)
             cell.fullNameLabel.text = eventScores[index].fullName
