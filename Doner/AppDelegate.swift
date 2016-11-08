@@ -20,19 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use Firebase library to configure APIs
         FIRApp.configure()
         
-        FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
-            if let user = user {
-                self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let main = storyboard.instantiateViewControllerWithIdentifier("myTabBarController")
-                self.window!.rootViewController = main
-                self.window!.makeKeyAndVisible()
-
-            } else {
-                // No user is signed in.
-            }
-        }
-        
         return true
     }
 
