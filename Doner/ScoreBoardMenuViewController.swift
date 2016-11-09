@@ -29,7 +29,7 @@ class ScoreBoardMenuViewController: UIViewController {
         let width = self.view.frame.width - 2 * padding
         let height = (self.view.frame.height - (self.tabBarController?.tabBar.frame.height)! - (self.navigationController?.navigationBar.frame.height)!) - 6 * padding
         
-        image = UIImage(named: "blue")
+        image = UIImage(named: "petrocup")
         
         imageView = UIImageView(image: image)
         //imageView.loadImageFromURLString(imageUrl, placeholderImage: UIImage(named: "enot"), completion: nil)
@@ -41,6 +41,7 @@ class ScoreBoardMenuViewController: UIViewController {
         
         subview.addSubview(imageView)
     
+        image = UIImage(named: "individual")
         imageView2 = UIImageView(image: image)
         //imageView2.loadImageFromURLString(imageUrl, placeholderImage: UIImage(named: "enot"), completion: nil)
         imageView2.frame = CGRect(x: padding, y: imageView.frame.height + 2 * padding, width: width, height: height / 2)
@@ -68,7 +69,7 @@ class ScoreBoardMenuViewController: UIViewController {
         } else
             if segue.identifier == "SegueGlobalScoreboard" {
             let vc = segue.destinationViewController as! GlobalScoreViewController
-            vc.title = "Individual board"
+            vc.title = "Individual Scoreboard"
         }
     }
 }
