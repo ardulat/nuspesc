@@ -64,11 +64,11 @@ class ScoreBoardMenuViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SegueEventScoreboard" {
             let vc = segue.destinationViewController as! EventScoreboardViewController
-            vc.title = "PetroCup"
+            vc.title = "Group 7"
         } else
             if segue.identifier == "SegueGlobalScoreboard" {
             let vc = segue.destinationViewController as! GlobalScoreViewController
-            vc.title = "Individual board"
+            vc.title = "Group 8"
         }
     }
 }
