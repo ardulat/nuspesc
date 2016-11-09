@@ -53,7 +53,7 @@ class QuizzesListViewController: UIViewController, UITableViewDelegate, UITableV
         let ref = FIRDatabase.database().reference().child("quizzes/")
         ref.observeEventType(.Value) {
             (snap: FIRDataSnapshot) in
-            if  snap.value != nil {
+            if  snap.exists() && snap.value != nil {
                 self.quizzes.removeAll()
                 for (key, value) in snap.value as! [String: AnyObject] {
                     let quiz = Quiz(qid: key, title: value["title"] as! String, creationdate: value["creationDate"] as! String)
@@ -129,10 +129,10 @@ class QuizzesListViewController: UIViewController, UITableViewDelegate, UITableV
         let index = indexPath.row
         cell.quizTitle!.text = quizzes[index].title
         cell.dateTitle!.text = getDateAsString(quizzes[index].creationdate)
-        cell.markImageView.image = UIImage(named: "notdonecircle")
+        cell.markImageView.image = UIImage(named: "undone")
         for done in donequizzes {
             if quizzes[index].qid == done.qid {
-                cell.markImageView.image = UIImage(named: "donecircle")
+                cell.markImageView.image = UIImage(named: "done")
                 break
             }
         }
