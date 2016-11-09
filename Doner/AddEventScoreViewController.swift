@@ -13,12 +13,15 @@ class AddEventScoreViewController: UIViewController {
 
     @IBOutlet weak var fullNameTextField: UITextField!
     @IBOutlet weak var initialScoreTextField: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
     
     var ref: FIRDatabaseReference!
     var eventScore: EventScore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        saveButton.layer.cornerRadius = 5
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddEventScoreViewController.dismissKeyboard))
         

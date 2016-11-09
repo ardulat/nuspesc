@@ -30,6 +30,10 @@ class QuizViewController: UIViewController, QuizDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        startButton.layer.cornerRadius = 5
+        startButton.backgroundColor = UIColor.mainColor()
+        startButton.setTitleColor(.whiteColor(), forState: .Normal)
+        
         let doneQuiz = delegate.getDoneQuiz(quiz.qid)
         if doneQuiz.qid == quiz.qid {
             startButton.setTitle("Go to leaderboard", forState: .Normal)

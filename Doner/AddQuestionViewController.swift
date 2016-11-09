@@ -30,6 +30,11 @@ class AddQuestionViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addButtonPressed.backgroundColor = UIColor.mainColor()
+        addButtonPressed.layer.cornerRadius = 5
+        addButtonPressed.setTitleColor(.whiteColor(), forState: .Normal)
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegistrationViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         autoFill()

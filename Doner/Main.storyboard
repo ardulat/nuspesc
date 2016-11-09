@@ -30,14 +30,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spe-logo" translatesAutoresizingMaskIntoConstraints="NO" id="PVi-H1-sRi">
-                                <rect key="frame" x="180" y="43" width="240" height="128"/>
+                                <rect key="frame" x="180" y="28" width="240" height="155"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="5Dv-pN-ha6"/>
+                                    <constraint firstAttribute="height" constant="155" id="5Dv-pN-ha6"/>
                                     <constraint firstAttribute="width" constant="240" id="SNH-gM-Sub"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Sd-4e-dp9">
-                                <rect key="frame" x="50" y="290" width="500" height="44"/>
+                                <rect key="frame" x="50" y="286" width="500" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="IHe-Ex-K2O"/>
                                 </constraints>
@@ -50,13 +50,13 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" E-mail" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ked-uc-pwA">
-                                <rect key="frame" x="50" y="202" width="500" height="30"/>
+                                <rect key="frame" x="50" y="198" width="500" height="30"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4Ow-Un-t7h">
-                                <rect key="frame" x="50" y="246" width="500" height="30"/>
+                                <rect key="frame" x="50" y="242" width="500" height="30"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
@@ -74,7 +74,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3rJ-6g-BgF">
-                                <rect key="frame" x="55" y="342" width="490" height="30"/>
+                                <rect key="frame" x="55" y="338" width="490" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="i60-bW-48B"/>
                                 </constraints>
@@ -86,7 +86,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQt-S7-zWy">
-                                <rect key="frame" x="50" y="380" width="500" height="88"/>
+                                <rect key="frame" x="50" y="376" width="500" height="88"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="88" id="udX-qu-Lxm"/>
                                 </constraints>
@@ -99,7 +99,7 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="ked-uc-pwA" secondAttribute="trailing" constant="30" id="0jU-5g-TeB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4Ow-Un-t7h" secondAttribute="trailing" constant="30" id="GkQ-Jx-X7D"/>
-                            <constraint firstItem="PVi-H1-sRi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="23" id="QgN-0r-kzc"/>
+                            <constraint firstItem="PVi-H1-sRi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="QgN-0r-kzc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SFU-WA-SVQ" secondAttribute="trailing" id="TIi-Op-JV2"/>
                             <constraint firstItem="4Ow-Un-t7h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="VU8-A0-B8n"/>
                             <constraint firstItem="OQt-S7-zWy" firstAttribute="top" secondItem="3rJ-6g-BgF" secondAttribute="bottom" constant="8" id="WCl-w9-YgD"/>
@@ -108,7 +108,7 @@
                             <constraint firstItem="4Sd-4e-dp9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="dPx-oa-b0e"/>
                             <constraint firstItem="4Sd-4e-dp9" firstAttribute="top" secondItem="4Ow-Un-t7h" secondAttribute="bottom" constant="14" id="duM-hE-kqs"/>
                             <constraint firstItem="4Ow-Un-t7h" firstAttribute="top" secondItem="ked-uc-pwA" secondAttribute="bottom" constant="14" id="e2F-6M-LQM"/>
-                            <constraint firstItem="ked-uc-pwA" firstAttribute="top" secondItem="PVi-H1-sRi" secondAttribute="bottom" constant="31" id="fiJ-rW-57f"/>
+                            <constraint firstItem="ked-uc-pwA" firstAttribute="top" secondItem="PVi-H1-sRi" secondAttribute="bottom" constant="15" id="fiJ-rW-57f"/>
                             <constraint firstItem="3rJ-6g-BgF" firstAttribute="top" secondItem="4Sd-4e-dp9" secondAttribute="bottom" constant="8" id="gJE-Se-5Py"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OQt-S7-zWy" secondAttribute="trailing" constant="30" id="kKn-eG-RRM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4Sd-4e-dp9" secondAttribute="trailing" constant="30" id="ph5-8a-vOC"/>
@@ -225,7 +225,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="attachButton" destination="2hS-LG-wgj" id="Y0z-57-Fbo"/>
                         <outlet property="datePicker" destination="GMb-1s-bog" id="4FN-7e-pMX"/>
+                        <outlet property="detachButton" destination="ajC-rV-ndU" id="I3l-pw-p7J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wAW-BX-YMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -599,6 +601,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="6c0-so-OF4" id="Q7e-Fp-iCO"/>
                         <outlet property="addPoints" destination="Hdy-hH-LhG" id="KCJ-MW-fb4"/>
                         <outlet property="bonusPoints" destination="wnY-b6-BeE" id="mrn-lp-7Mj"/>
                         <outlet property="quizPoints" destination="md6-UR-hbE" id="XM2-j2-7hx"/>
@@ -784,17 +787,18 @@
                     <connections>
                         <outlet property="fullNameTextField" destination="Sai-oB-mF4" id="aIu-Fv-dZx"/>
                         <outlet property="initialScoreTextField" destination="h9V-ld-XaS" id="0lp-XQ-dlk"/>
+                        <outlet property="saveButton" destination="jTe-qd-V8P" id="h42-3l-pAw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CLd-v2-V3i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4693" y="382"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Calendar-->
         <scene sceneID="IQ5-Sl-Y1R">
             <objects>
                 <navigationController navigationBarHidden="YES" id="fGn-ez-M2d" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="downloads" id="sCl-Rf-hpV"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="Calendar active" selectedImage="Calendar active" id="sCl-Rf-hpV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CMQ-e3-BRM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -923,11 +927,11 @@
             </objects>
             <point key="canvasLocation" x="664" y="3560"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--News-->
         <scene sceneID="sDP-8f-GwH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qY3-Ew-jga" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="CL2-BN-A0p"/>
+                    <tabBarItem key="tabBarItem" title="News" image="News active" selectedImage="News active" id="CL2-BN-A0p"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="HHm-17-YhW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1119,11 +1123,11 @@
             </objects>
             <point key="canvasLocation" x="2650" y="-2418"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--About-->
         <scene sceneID="HQ4-lS-gV4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eHB-vr-WtB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="history" id="Ynf-Z9-gAy"/>
+                    <tabBarItem key="tabBarItem" title="About" image="About active" selectedImage="About active" id="Ynf-Z9-gAy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="4J9-m8-hcO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1564,13 +1568,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spe-logo" translatesAutoresizingMaskIntoConstraints="NO" id="0sb-Jf-8X4">
-                                <rect key="frame" x="180" y="43" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="VeV-8y-oFU"/>
-                                    <constraint firstAttribute="width" constant="240" id="pIj-tQ-jjA"/>
-                                </constraints>
-                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Xwz-VB-Zzf">
                                 <rect key="frame" x="50" y="198" width="500" height="30"/>
                                 <constraints>
@@ -1615,12 +1612,19 @@
                                     <action selector="backButtonTapped:" destination="bOt-af-bwg" eventType="touchUpInside" id="LYj-lF-zut"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spe-logo" translatesAutoresizingMaskIntoConstraints="NO" id="0sb-Jf-8X4">
+                                <rect key="frame" x="180" y="28" width="240" height="155"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="155" id="VeV-8y-oFU"/>
+                                    <constraint firstAttribute="width" constant="240" id="pIj-tQ-jjA"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.4039215686" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="vbn-O7-I8I" firstAttribute="leading" secondItem="hds-ms-lDr" secondAttribute="leadingMargin" constant="30" id="1U9-tL-lb6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vbn-O7-I8I" secondAttribute="trailing" constant="30" id="8ef-sN-7Zr"/>
-                            <constraint firstItem="Xwz-VB-Zzf" firstAttribute="top" secondItem="0sb-Jf-8X4" secondAttribute="bottom" constant="27" id="EMS-QK-ngj"/>
+                            <constraint firstItem="Xwz-VB-Zzf" firstAttribute="top" secondItem="0sb-Jf-8X4" secondAttribute="bottom" constant="15" id="EMS-QK-ngj"/>
                             <constraint firstItem="0sb-Jf-8X4" firstAttribute="centerX" secondItem="hds-ms-lDr" secondAttribute="centerX" id="FVh-bl-E0I"/>
                             <constraint firstItem="4kB-Rp-csr" firstAttribute="top" secondItem="Xwz-VB-Zzf" secondAttribute="bottom" constant="14" id="QBN-kh-xsB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Xwz-VB-Zzf" secondAttribute="trailing" constant="30" id="TBE-dw-MCG"/>
@@ -1629,7 +1633,7 @@
                             <constraint firstItem="4kB-Rp-csr" firstAttribute="leading" secondItem="hds-ms-lDr" secondAttribute="leadingMargin" constant="30" id="ZRa-8L-CCU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4kB-Rp-csr" secondAttribute="trailing" constant="30" id="esX-Jf-jHO"/>
                             <constraint firstItem="ag1-10-gsT" firstAttribute="centerX" secondItem="hds-ms-lDr" secondAttribute="centerX" id="hC7-B7-m3Q"/>
-                            <constraint firstItem="0sb-Jf-8X4" firstAttribute="top" secondItem="dlj-lb-Vz0" secondAttribute="bottom" constant="23" id="lNo-l3-TmF"/>
+                            <constraint firstItem="0sb-Jf-8X4" firstAttribute="top" secondItem="dlj-lb-Vz0" secondAttribute="bottom" constant="8" id="lNo-l3-TmF"/>
                             <constraint firstItem="vbn-O7-I8I" firstAttribute="top" secondItem="4kB-Rp-csr" secondAttribute="bottom" constant="8" id="lT7-5x-2cQ"/>
                         </constraints>
                     </view>
@@ -1643,11 +1647,11 @@
             </objects>
             <point key="canvasLocation" x="-298" y="2793"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Scoreboard-->
         <scene sceneID="33j-Il-mIX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oS5-DE-1np" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="RKR-aO-co9"/>
+                    <tabBarItem key="tabBarItem" title="Scoreboard" image="score actove" selectedImage="score actove" id="RKR-aO-co9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="yYp-yk-1RM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -2028,6 +2032,7 @@
                     <connections>
                         <outlet property="quizTitle" destination="NSa-cd-aP4" id="o4W-U1-Na3"/>
                         <outlet property="tableView" destination="0eQ-Vk-wAy" id="dAn-r7-FZY"/>
+                        <outlet property="uploadButton" destination="HRp-m3-KFY" id="TWR-Pg-HMO"/>
                         <segue destination="teI-ZL-thp" kind="show" identifier="SegueAddQuestion" id="mNV-qd-ru0"/>
                     </connections>
                 </viewController>
@@ -2146,11 +2151,11 @@
             </objects>
             <point key="canvasLocation" x="3898" y="2938"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Quiz-->
         <scene sceneID="N0f-Yv-lQT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SgP-hx-zj8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="q3G-He-8bs"/>
+                    <tabBarItem key="tabBarItem" title="Quiz" image="Quiz active" selectedImage="Quiz active" id="q3G-He-8bs"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="YtU-qI-jQe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -2173,9 +2178,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="About active" width="25" height="25"/>
+        <image name="Calendar active" width="25" height="25"/>
         <image name="Delete-100" width="100" height="100"/>
+        <image name="News active" width="25" height="23"/>
+        <image name="Quiz active" width="25" height="25"/>
         <image name="enot" width="894" height="895"/>
-        <image name="spe-logo" width="360" height="187"/>
+        <image name="score actove" width="25" height="25"/>
+        <image name="spe-logo" width="2078" height="1352"/>
         <image name="winter" width="1200" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>

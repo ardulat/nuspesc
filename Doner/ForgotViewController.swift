@@ -59,41 +59,49 @@ class ForgotViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func sendButtonTapped(sender: UIButton) {
         
-        let domain = String(txtEmail.text!.characters.suffix(10))
-        
-        if txtEmail.text == "" || domain != "@nu.edu.kz" {
-            
-            dismissKeyboard()
-            txtEmail.shake()
-            errorLabel.fadeTransition(0.4)
-            self.errorLabel.text = "Please enter your @nu.edu.kz e-mail."
-            
+        if txtEmail.text == "" {
+            self.dismissKeyboard()
+            self.txtEmail.shake()
+            self.errorLabel.fadeTransition(0.4)
+            self.errorLabel.text = "Enter your e-mail and password."
+            self.errorLabel.textColor = .redColor()
         } else {
+        
+            let domain = String(txtEmail.text!.characters.suffix(10))
             
-            if sendButton.currentTitle != "Reset Password has been sent" {
+            if txtEmail.text == "" || domain != "@nu.edu.kz" {
                 
-                FIRAuth.auth()?.sendPasswordResetWithEmail(self.txtEmail.text!, completion: { (error) in
+                dismissKeyboard()
+                txtEmail.shake()
+                errorLabel.fadeTransition(0.4)
+                self.errorLabel.text = "Please enter your @nu.edu.kz e-mail."
+                
+            } else {
+                
+                if sendButton.currentTitle != "Reset Password has been sent" {
                     
-                    print(error?.localizedDescription)
-                    
-                    if error != nil {
+                    FIRAuth.auth()?.sendPasswordResetWithEmail(self.txtEmail.text!, completion: { (error) in
                         
-                        print(error!.localizedDescription)
-                        self.errorLabel.fadeTransition(0.4)
-                        self.errorLabel.text = error!.localizedDescription
+                        print(error?.localizedDescription)
                         
-                    } else {
-                        
-                        print("reset password email has been sent")
-                        dispatch_async(dispatch_get_main_queue()) {
-                            self.sendButton.setTitle("Reset Password has been sent", forState: .Normal)
-                            self.txtEmail.text = ""
+                        if error != nil {
+                            
+                            print(error!.localizedDescription)
+                            self.errorLabel.fadeTransition(0.4)
+                            self.errorLabel.text = error!.localizedDescription
+                            
+                        } else {
+                            
+                            print("reset password email has been sent")
+                            dispatch_async(dispatch_get_main_queue()) {
+                                self.sendButton.setTitle("Reset Password has been sent", forState: .Normal)
+                                self.txtEmail.text = ""
+                            }
                         }
-                    }
-                })
+                    })
+                }
             }
         }
-
     }
     
     @IBAction func backButtonTapped(sender: UIButton) {

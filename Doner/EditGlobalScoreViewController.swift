@@ -14,11 +14,16 @@ class EditGlobalScoreViewController: UIViewController {
     @IBOutlet weak var quizPoints: UILabel!
     @IBOutlet weak var bonusPoints: UILabel!
     @IBOutlet weak var addPoints: UITextField!
+    @IBOutlet weak var addButton: UIButton!
     
     var score: GlobalScore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addButton.layer.cornerRadius = 5
+        addButton.backgroundColor = UIColor.mainColor()
+        addButton.setTitleColor(.whiteColor(), forState: .Normal)
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddEventScoreViewController.dismissKeyboard))
         

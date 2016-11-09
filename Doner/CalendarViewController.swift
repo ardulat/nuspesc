@@ -167,6 +167,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
         // Downloading images of articles
         let reference = FIRStorage.storage().reference().child("images/\(currentArticles[indexPath.row].aid).jpg")
         reference.downloadURLWithCompletion { (URL, error) -> Void in
@@ -175,9 +176,10 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
             } else {
                 let url = (URL?.absoluteString)!
                 self.currentArticles[indexPath.row].imageUrl = url
+                self.performSegueWithIdentifier("EventToArticle", sender: indexPath)
             }
         }
-        performSegueWithIdentifier("EventToArticle", sender: indexPath)
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

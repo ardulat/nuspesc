@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SwiftSpinner
 
 class OverviewViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var recentCollectionView: UICollectionView!
@@ -16,9 +17,12 @@ class OverviewViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     var articles = [Article]()
     
+    var activityIndicator = UIActivityIndicatorView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SwiftSpinner.show("Wait...")
         downloadRecentArticles()
         recentCollectionView.delegate = self
         recentCollectionView.dataSource = self
@@ -62,6 +66,7 @@ class OverviewViewController: UIViewController, UICollectionViewDelegate, UIColl
                 self.sortByDate()
                 self.recentCollectionView.reloadData()
             }
+            SwiftSpinner.hide()
         }
     }
     
@@ -89,6 +94,11 @@ class OverviewViewController: UIViewController, UICollectionViewDelegate, UIColl
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ArticleCell", forIndexPath: indexPath) as! RecentCollectionViewCell
         
+        activityIndicator.activityIndicatorViewStyle = .WhiteLarge
+        activityIndicator.center = cell.center
+        cell.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        
         let index = indexPath.row
         cell.titleLabel.text = articles[index].title
         cell.dateLabel.text = articles[index].date
@@ -102,6 +112,7 @@ class OverviewViewController: UIViewController, UICollectionViewDelegate, UIColl
                     let url = (URL?.absoluteString)!
                     cell.mainImageView.loadImageFromURLString(url, placeholderImage: UIImage(named: "enot"), completion: nil)
                     self.articles[index].imageUrl = url
+                    self.activityIndicator.stopAnimating()
                 }
             }
         } else {

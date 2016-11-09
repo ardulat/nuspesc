@@ -73,66 +73,92 @@ class RegistrationViewController: UIViewController {
         
         if type == 2 {
             dismissKeyboard()
-            FIRAuth.auth()?.signInWithEmail(emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
-                
-                if let user = FIRAuth.auth()?.currentUser {
-                    print(user.email)
-                    print(user.emailVerified)
+            if emailTextField.text == "" || passwordTextField.text == "" {
+                self.dismissKeyboard()
+                self.emailTextField.shake()
+                self.passwordTextField.shake()
+                self.errorLabel.fadeTransition(0.4)
+                self.errorLabel.text = "Enter your e-mail and password."
+                self.errorLabel.textColor = .redColor()
+            } else {
+            
+                FIRAuth.auth()?.signInWithEmail(emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
                     
-                    if user.emailVerified == false {
-                        self.dismissKeyboard()
-                        self.emailTextField.shake()
-                        self.passwordTextField.shake()
-                        self.errorLabel.fadeTransition(0.4)
-                        self.errorLabel.text = "E-mail not verified. Please verify your e-mail first."
-                        self.errorLabel.textColor = .redColor()
+                    if let user = FIRAuth.auth()?.currentUser {
+                        print(user.email)
+                        print(user.emailVerified)
+                        
+                        if user.emailVerified == false {
+                            self.dismissKeyboard()
+                            self.emailTextField.shake()
+                            self.passwordTextField.shake()
+                            self.errorLabel.fadeTransition(0.4)
+                            self.errorLabel.text = "E-mail not verified. Please verify your e-mail first."
+                            self.errorLabel.textColor = .redColor()
+                        } else {
+                            if error != nil {
+                                print(error)
+                                self.showAlert(error!)
+                            } else {
+                                print("Logged in")
+                                self.checkForAdmin(user.email!)
+                            }
+                        }
                     } else {
                         if error != nil {
                             print(error)
                             self.showAlert(error!)
-                        } else {
-                            print("Logged in")
-                            self.checkForAdmin(user.email!)
-                        }
-                    }
-                }
-            })
-        } else { // type == .SignUp
-            dismissKeyboard()
-            let domain = String(emailTextField.text!.characters.suffix(10))
-            
-            if domain == "@nu.edu.kz" {
-                
-                FIRAuth.auth()?.createUserWithEmail(emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
-                    
-                    if error != nil {
-                        print(error)
-                        self.showAlert(error!)
-                    } else {
-                        print("Signed in")
-                        user?.sendEmailVerificationWithCompletion() { error in
-                            if error != nil {
-                                // An error happened.
-                                self.showAlert(error!)
-                            } else {
-                                // Email sent.
-                                print("email sent")
-                                self.dismissKeyboard()
-                                self.errorLabel.text = "The verification e-mail has been sent to you. Verify your e-mail."
-                                self.errorLabel.textColor = .whiteColor()
-                                self.toggleLoginSignUp(sender)
-                            }
                         }
                     }
                 })
-
-            } else {
+            }
+        } else { // type == .SignUp
+            dismissKeyboard()
+            if emailTextField.text == "" || passwordTextField.text == "" {
                 
-                dismissKeyboard()
-                emailTextField.shake()
-                passwordTextField.shake()
-                errorLabel.fadeTransition(0.4)
-                errorLabel.text = "You need to have nu.edu.kz e-mail adress."
+                self.dismissKeyboard()
+                self.emailTextField.shake()
+                self.passwordTextField.shake()
+                self.errorLabel.fadeTransition(0.4)
+                self.errorLabel.text = "Enter your e-mail and password."
+                self.errorLabel.textColor = .redColor()
+                
+            } else {
+                let domain = String(emailTextField.text!.characters.suffix(10))
+                
+                if domain == "@nu.edu.kz" {
+                    
+                    FIRAuth.auth()?.createUserWithEmail(emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
+                        
+                        if error != nil {
+                            print(error)
+                            self.showAlert(error!)
+                        } else {
+                            print("Signed in")
+                            user?.sendEmailVerificationWithCompletion() { error in
+                                if error != nil {
+                                    // An error happened.
+                                    self.showAlert(error!)
+                                } else {
+                                    // Email sent.
+                                    print("email sent")
+                                    self.dismissKeyboard()
+                                    self.errorLabel.text = "The verification e-mail has been sent to you. Verify your e-mail."
+                                    self.errorLabel.textColor = .whiteColor()
+                                    self.toggleLoginSignUp(sender)
+                                }
+                            }
+                        }
+                    })
+
+                } else {
+                    
+                    dismissKeyboard()
+                    emailTextField.shake()
+                    passwordTextField.shake()
+                    errorLabel.fadeTransition(0.4)
+                    errorLabel.text = "You need to have nu.edu.kz e-mail adress."
+                }
             }
         }
         

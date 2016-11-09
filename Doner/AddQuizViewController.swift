@@ -20,11 +20,17 @@ class AddQuizViewController: UIViewController, QuizEditorDelegate, UITableViewDe
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var quizTitle: UITextField!
+    @IBOutlet weak var uploadButton: UIButton!
     
     var quiz: Quiz!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        uploadButton.layer.cornerRadius = 5
+        uploadButton.backgroundColor = UIColor.mainColor()
+        uploadButton.setTitleColor(.whiteColor(), forState: .Normal)
+        
         initQuiz()
     }
     
