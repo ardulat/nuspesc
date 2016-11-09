@@ -28,6 +28,8 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
     var months: [String] = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     var monthsImgs: [UIImage] = []
     
+    var Erzhancommit: String!
+    
     var counter = 0
     
     override func viewDidLoad() {
