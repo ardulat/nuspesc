@@ -12,6 +12,7 @@ class MemberViewController: UIViewController {
 
     @IBOutlet weak var memberLabel: UILabel!
     @IBOutlet weak var textLabel: UITextView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var text = "Step 1\n\nFollow the link bellow and register\nhttp://www.spe.org/join/\n\nStep 2\n\nSend your membership number on spe@nu.edu.kz\n\nStep 3\n\nBe an active member of NU SPE SC :)"
     
@@ -29,6 +30,16 @@ class MemberViewController: UIViewController {
         textLabel.editable = false // default: true
         textLabel.selectable = true // default: true
         textLabel.dataDetectorTypes = [.Link]
+        textLabel.scrollEnabled = true
+        
+        let fixedWidth2 = textLabel.frame.size.width
+        textLabel.sizeThatFits(CGSize(width: fixedWidth2, height: CGFloat.max))
+        let newSize2 = textLabel.sizeThatFits(CGSize(width: fixedWidth2, height: CGFloat.max))
+        var newFrame2 = textLabel.frame
+        newFrame2.size = CGSize(width: max(newSize2.width, fixedWidth2), height: newSize2.height)
+        textLabel.frame = newFrame2
+        
+        scrollView.contentSize = CGSize(width: view.frame.width, height: memberLabel.frame.height + textLabel.frame.height + 200)
     }
 
     override func didReceiveMemoryWarning() {

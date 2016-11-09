@@ -1178,21 +1178,8 @@
                                     <constraint firstItem="QTS-it-vmv" firstAttribute="centerX" secondItem="yyx-M5-LCb" secondAttribute="centerX" id="idG-fD-y3G"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULQ-yz-sK8">
-                                <rect key="frame" x="20" y="421" width="560" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="uWf-8S-W52"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                <state key="normal" title="How to become a member">
-                                    <color key="titleColor" red="0.0" green="0.4039215686" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="rMT-RY-wIo" kind="show" id="W12-oO-dep"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9b-zg-a2E">
-                                <rect key="frame" x="20" y="369" width="560" height="44"/>
+                                <rect key="frame" x="20" y="349" width="560" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="1kw-iv-yca"/>
                                 </constraints>
@@ -1205,7 +1192,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWU-yz-HpM">
-                                <rect key="frame" x="20" y="317" width="560" height="44"/>
+                                <rect key="frame" x="20" y="297" width="560" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Z70-rI-ffu"/>
                                 </constraints>
@@ -1219,14 +1206,27 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="37x-JV-gyW">
-                                <rect key="frame" x="20" y="164" width="560" height="121"/>
+                                <rect key="frame" x="20" y="164" width="560" height="109"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="121" id="kCG-lW-dcZ"/>
+                                    <constraint firstAttribute="height" constant="109" id="kCG-lW-dcZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.4039215686" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULQ-yz-sK8">
+                                <rect key="frame" x="20" y="401" width="560" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="uWf-8S-W52"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <state key="normal" title="How to become a member">
+                                    <color key="titleColor" red="0.0" green="0.4039215686" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="rMT-RY-wIo" kind="show" id="W12-oO-dep"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1234,7 +1234,7 @@
                             <constraint firstAttribute="leadingMargin" secondItem="c9b-zg-a2E" secondAttribute="leading" id="DJq-lC-cWN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eWU-yz-HpM" secondAttribute="trailing" id="G4g-CJ-PFr"/>
                             <constraint firstItem="yyx-M5-LCb" firstAttribute="top" secondItem="eRD-Ji-nxF" secondAttribute="bottom" id="Ju1-Ys-biU"/>
-                            <constraint firstItem="eWU-yz-HpM" firstAttribute="top" secondItem="37x-JV-gyW" secondAttribute="bottom" constant="32" id="MqR-vN-jLj"/>
+                            <constraint firstItem="eWU-yz-HpM" firstAttribute="top" secondItem="37x-JV-gyW" secondAttribute="bottom" constant="24" id="MqR-vN-jLj"/>
                             <constraint firstAttribute="trailing" secondItem="yyx-M5-LCb" secondAttribute="trailing" id="Oh7-g7-DVU"/>
                             <constraint firstItem="37x-JV-gyW" firstAttribute="top" secondItem="yyx-M5-LCb" secondAttribute="bottom" constant="17" id="QEo-F5-fS8"/>
                             <constraint firstAttribute="leadingMargin" secondItem="eWU-yz-HpM" secondAttribute="leading" id="UE1-s3-g3M"/>
@@ -1243,6 +1243,7 @@
                             <constraint firstItem="c9b-zg-a2E" firstAttribute="top" secondItem="eWU-yz-HpM" secondAttribute="bottom" constant="8" id="Wtt-59-3JA"/>
                             <constraint firstItem="yyx-M5-LCb" firstAttribute="leading" secondItem="qHc-RQ-rpq" secondAttribute="leading" id="aGn-b6-OOa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="37x-JV-gyW" secondAttribute="trailing" id="dIT-pJ-rVC"/>
+                            <constraint firstItem="caR-oC-r2o" firstAttribute="top" secondItem="ULQ-yz-sK8" secondAttribute="bottom" constant="42" id="j4e-Ic-WhK"/>
                             <constraint firstItem="ULQ-yz-sK8" firstAttribute="top" secondItem="c9b-zg-a2E" secondAttribute="bottom" constant="8" id="uur-Qo-2Cj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="c9b-zg-a2E" secondAttribute="trailing" id="y6C-yT-FcL"/>
                         </constraints>
@@ -1353,10 +1354,10 @@
                                     <constraint firstItem="4jA-OY-gbi" firstAttribute="centerX" secondItem="7cv-B1-0GP" secondAttribute="centerX" id="vYg-rA-15C"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckc-d5-oq1">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckc-d5-oq1">
                                 <rect key="frame" x="0.0" y="147" width="600" height="340"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXf-xe-eN6">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXf-xe-eN6">
                                         <rect key="frame" x="20" y="59" width="560" height="281"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -1366,12 +1367,12 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to become a member" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2f-ra-Pa6">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to become a member" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="x2f-ra-Pa6">
                                         <rect key="frame" x="20" y="8" width="560" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="Rnc-6w-DWh"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <color key="textColor" red="0.0" green="0.4039215686" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1401,6 +1402,7 @@
                     </view>
                     <connections>
                         <outlet property="memberLabel" destination="x2f-ra-Pa6" id="Orx-f7-Wk2"/>
+                        <outlet property="scrollView" destination="ckc-d5-oq1" id="B5d-aL-VVU"/>
                         <outlet property="textLabel" destination="iXf-xe-eN6" id="CrS-fd-Hps"/>
                     </connections>
                 </viewController>

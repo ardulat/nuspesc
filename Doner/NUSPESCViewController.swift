@@ -29,6 +29,7 @@ class NUSPESCViewController: UIViewController {
     }
     
     func initUI() {
+        self.title = "NU SPE SC"
         let size = self.view.frame.width - 2 * padding
         let imageSize = size * 0.75
         let imagepaddingX = (self.view.frame.width - imageSize) / 2
