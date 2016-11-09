@@ -2036,10 +2036,7 @@
         <image name="News active" width="25" height="23"/>
         <image name="Quiz active" width="25" height="25"/>
         <image name="enot" width="894" height="895"/>
-<<<<<<< HEAD
         <image name="score actove" width="25" height="25"/>
-=======
->>>>>>> 808d554ea0ae440d40b58190784ff175d1dc2945
         <image name="spe-logo" width="2078" height="1352"/>
         <image name="winter" width="1200" height="600"/>
     </resources>
