@@ -30,7 +30,6 @@ class ArticleViewController: UIViewController, UITextViewDelegate, UIImagePicker
     var imageView: UIImageView! = nil
     var titleView: UITextView! = nil
     var textView: UITextView! = nil
-    var subview: UIView! = nil
     
     var saveButton: UIBarButtonItem! = nil
     var addDateButton: UIBarButtonItem! = nil
@@ -116,13 +115,12 @@ class ArticleViewController: UIViewController, UITextViewDelegate, UIImagePicker
         
         self.scrollView.addGestureRecognizer(tap)
         
-        let subview = UIView(frame: scrollView.frame)
         let size = self.view.frame.width - 2 * padding
         image = UIImage(named: "enot")
         imageView = UIImageView(image: image)
         imageView.loadImageFromURLString(imageUrl, placeholderImage: UIImage(named: "enot"), completion: nil)
         imageView.frame = CGRect(x: padding, y: padding, width: size, height: size)
-        subview.addSubview(imageView)
+        scrollView.addSubview(imageView)
         
         // adding title view
         titleView = UITextView()
@@ -131,7 +129,7 @@ class ArticleViewController: UIViewController, UITextViewDelegate, UIImagePicker
         titleView.font = .systemFontOfSize(19)
         titleView.text = title
         titleView.frame = CGRect(x: padding, y: padding + size, width: size, height: titleHeight)
-        subview.addSubview(titleView)
+        scrollView.addSubview(titleView)
         
         titleView.dataDetectorTypes = UIDataDetectorTypes.Link
         
@@ -142,11 +140,12 @@ class ArticleViewController: UIViewController, UITextViewDelegate, UIImagePicker
         textView.font = .systemFontOfSize(18)
         textView.text = text
         textView.frame = CGRect(x: padding, y: padding + size + titleHeight + padding, width: size, height: 0)
-        subview.addSubview(textView)
+        scrollView.addSubview(textView)
        
-        textView.dataDetectorTypes = UIDataDetectorTypes.Link
-        
-        scrollView.addSubview(subview)
+        textView.userInteractionEnabled = true // default: true
+        textView.editable = false // default: true
+        textView.selectable = true // default: true
+        textView.dataDetectorTypes = [.Link]
         
         if !articlePassed {
             titleView.text = "Type a title"
