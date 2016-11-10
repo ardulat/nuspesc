@@ -31,6 +31,9 @@ class MemberViewController: UIViewController {
         textLabel.editable = false // default: true
         textLabel.selectable = true // default: true
         textLabel.dataDetectorTypes = [.Link]
+        
+        
+        scrollView.setContentOffset(CGPointZero, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

@@ -65,6 +65,7 @@ class RegistrationViewController: UIViewController {
         errorLabel.fadeTransition(0.4)
         self.errorLabel.textColor = .redColor()
         self.errorLabel.text = error.localizedDescription
+        SwiftSpinner.hide()
     }
     
     func dismissKeyboard() {

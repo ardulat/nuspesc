@@ -29,7 +29,7 @@ class ScoreBoardMenuViewController: UIViewController {
         let width = self.view.frame.width - 2 * padding
         let height = (self.view.frame.height - (self.tabBarController?.tabBar.frame.height)! - (self.navigationController?.navigationBar.frame.height)!) - 6 * padding
         
-        image = UIImage(named: "blue")
+        image = UIImage(named: "Group 7")
         
         imageView = UIImageView(image: image)
         //imageView.loadImageFromURLString(imageUrl, placeholderImage: UIImage(named: "enot"), completion: nil)
@@ -40,7 +40,8 @@ class ScoreBoardMenuViewController: UIViewController {
         imageView.addGestureRecognizer(tapGestureRecognizer)
         
         subview.addSubview(imageView)
-    
+        
+        image = UIImage(named: "Group 8")
         imageView2 = UIImageView(image: image)
         //imageView2.loadImageFromURLString(imageUrl, placeholderImage: UIImage(named: "enot"), completion: nil)
         imageView2.frame = CGRect(x: padding, y: imageView.frame.height + 2 * padding, width: width, height: height / 2)
@@ -64,11 +65,11 @@ class ScoreBoardMenuViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SegueEventScoreboard" {
             let vc = segue.destinationViewController as! EventScoreboardViewController
-            vc.title = "Group 7"
+            vc.title = "PetroCup"
         } else
             if segue.identifier == "SegueGlobalScoreboard" {
             let vc = segue.destinationViewController as! GlobalScoreViewController
-            vc.title = "Group 8"
+            vc.title = "Individual board"
         }
     }
 }
