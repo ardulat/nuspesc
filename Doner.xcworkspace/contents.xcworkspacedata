@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/macbookpro/Desktop/Comeback/Comeback/SPE ON.xcodeproj">
+      location = "group:SPE ON.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
