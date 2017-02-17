@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD4324386ECDDFF6F07F0C0F /* Pods_Doner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC369094B8CB1E19D79B6DD /* Pods_Doner.framework */; };
 		E012A6851DB5518300036CF3 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E012A6841DB5518300036CF3 /* CalendarViewController.swift */; };
 		E012A69A1DBAB51E00036CF3 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E012A6991DBAB51E00036CF3 /* CellView.xib */; };
 		E02092D21DB13E8A00E48542 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02092D11DB13E8A00E48542 /* Color.swift */; };
@@ -36,6 +35,7 @@
 		E0CBB93E1DCA820C009DAE66 /* SF-UI-Display-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = E0CBB9351DCA8157009DAE66 /* SF-UI-Display-Ultralight.otf */; };
 		E0E2CF821DB14ED3007A20F6 /* ForgotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E2CF811DB14ED3007A20F6 /* ForgotViewController.swift */; };
 		E0E2CF841DB1AD13007A20F6 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E2CF831DB1AD13007A20F6 /* Animation.swift */; };
+		ECE7629924AF5ECE857462B6 /* Pods_SPE_ON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4101F3156924AD5ACB667308 /* Pods_SPE_ON.framework */; };
 		FA0FA25D1D9B8C6400287713 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FA25C1D9B8C6400287713 /* AppDelegate.swift */; };
 		FA0FA2641D9B8C6400287713 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0FA2631D9B8C6400287713 /* Assets.xcassets */; };
 		FA0FA2671D9B8C6400287713 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0FA2651D9B8C6400287713 /* LaunchScreen.storyboard */; };
@@ -64,7 +64,9 @@
 
 /* Begin PBXFileReference section */
 		03E610784242617C8DD795DC /* Pods-Doner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doner/Pods-Doner.debug.xcconfig"; sourceTree = "<group>"; };
+		4101F3156924AD5ACB667308 /* Pods_SPE_ON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SPE_ON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D486D1A7A1568407D7FBE2 /* Pods-Doner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Doner/Pods-Doner.release.xcconfig"; sourceTree = "<group>"; };
+		D961138FC162A2C3E5CBAA4F /* Pods-SPE ON.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPE ON.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SPE ON/Pods-SPE ON.debug.xcconfig"; sourceTree = "<group>"; };
 		DBC369094B8CB1E19D79B6DD /* Pods_Doner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E012A6841DB5518300036CF3 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		E012A6991DBAB51E00036CF3 /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		E0CBB9351DCA8157009DAE66 /* SF-UI-Display-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Ultralight.otf"; sourceTree = "<group>"; };
 		E0E2CF811DB14ED3007A20F6 /* ForgotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotViewController.swift; sourceTree = "<group>"; };
 		E0E2CF831DB1AD13007A20F6 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		F115EDD40973B90210461F4A /* Pods-SPE ON.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPE ON.release.xcconfig"; path = "Pods/Target Support Files/Pods-SPE ON/Pods-SPE ON.release.xcconfig"; sourceTree = "<group>"; };
 		FA0FA2591D9B8C6400287713 /* SPE ON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SPE ON.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0FA25C1D9B8C6400287713 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA0FA2631D9B8C6400287713 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -127,7 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD4324386ECDDFF6F07F0C0F /* Pods_Doner.framework in Frameworks */,
+				ECE7629924AF5ECE857462B6 /* Pods_SPE_ON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				DBC369094B8CB1E19D79B6DD /* Pods_Doner.framework */,
+				4101F3156924AD5ACB667308 /* Pods_SPE_ON.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -147,6 +151,8 @@
 			children = (
 				03E610784242617C8DD795DC /* Pods-Doner.debug.xcconfig */,
 				C9D486D1A7A1568407D7FBE2 /* Pods-Doner.release.xcconfig */,
+				D961138FC162A2C3E5CBAA4F /* Pods-SPE ON.debug.xcconfig */,
+				F115EDD40973B90210461F4A /* Pods-SPE ON.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -361,7 +367,7 @@
 				TargetAttributes = {
 					FA0FA2581D9B8C6400287713 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = QDFYJKM32N;
+						DevelopmentTeam = LBV58TT52M;
 					};
 				};
 			};
@@ -420,7 +426,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Doner/Pods-Doner-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SPE ON/Pods-SPE ON-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4EA1C7AF31BEB0188F34415A /* [CP] Copy Pods Resources */ = {
@@ -435,7 +441,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Doner/Pods-Doner-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SPE ON/Pods-SPE ON-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EDBC8DBE3658DBBD7483F1D7 /* [CP] Check Pods Manifest.lock */ = {
@@ -600,7 +606,7 @@
 		};
 		FA0FA26C1D9B8C6400287713 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03E610784242617C8DD795DC /* Pods-Doner.debug.xcconfig */;
+			baseConfigurationReference = D961138FC162A2C3E5CBAA4F /* Pods-SPE ON.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -615,7 +621,7 @@
 		};
 		FA0FA26D1D9B8C6400287713 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9D486D1A7A1568407D7FBE2 /* Pods-Doner.release.xcconfig */;
+			baseConfigurationReference = F115EDD40973B90210461F4A /* Pods-SPE ON.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

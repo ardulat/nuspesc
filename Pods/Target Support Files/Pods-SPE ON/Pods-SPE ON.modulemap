@@ -1,0 +1,6 @@
+framework module Pods_SPE_ON {
+  umbrella header "Pods-SPE ON-umbrella.h"
+
+  export *
+  module * { export * }
+}

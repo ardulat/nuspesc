@@ -21,7 +21,6 @@ class OverviewViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         SwiftSpinner.show("Loading...")
         downloadRecentArticles()
         recentCollectionView.delegate = self

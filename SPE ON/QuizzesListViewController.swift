@@ -153,7 +153,7 @@ class QuizzesListViewController: UIViewController, UITableViewDelegate, UITableV
         if hour < 10 { ldh = "0"}
         if minute < 10 { ldm = "0"}
         
-        return "\(day).\(month).\(year)"
+        return "\(day).\(ldh)\(month).\(ldm)\(year)"
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -167,7 +167,7 @@ class QuizzesListViewController: UIViewController, UITableViewDelegate, UITableV
             vc.delegate = self
         } else
             if segue.identifier == "SegueAddQuiz" {
-                let vc = segue.destinationViewController as! AddQuizViewController
+                _ = segue.destinationViewController as! AddQuizViewController
         }
     }
 }

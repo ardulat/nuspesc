@@ -19,20 +19,26 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var forgotButton: UIButton!
     
-    var type: Int = 2
+    var type: Int = -1
+    
+    var REGISTER: Int = 1
+    var LOGIN: Int = 2
     
     var ref: FIRDatabaseReference!
     var activityIndicator = UIActivityIndicatorView()
+    var handle: FIRAuthStateDidChangeListenerHandle!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
+        handle = FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
             if let user = user {
-                if user.email != "demo@gmail.com" {
+                if user.email != "demo@gmail.com" && user.emailVerified {
                     self.emailTextField.text = user.email
                     self.passwordTextField.text = "qwerty123"
                     self.performSegueWithIdentifier("SegueLoginToOverview", sender: self)
+                    FIRAuth.auth()?.removeAuthStateDidChangeListener(self.handle)
                 }
             } else {
                 // No user is signed in.
@@ -42,7 +48,7 @@ class RegistrationViewController: UIViewController {
         loginButton.layer.borderWidth = 1
         loginButton.layer.borderColor = UIColor.whiteColor().CGColor
         loginButton.layer.cornerRadius = 5
-        type = 2
+        type = LOGIN
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegistrationViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -59,13 +65,13 @@ class RegistrationViewController: UIViewController {
     }
     
     func showAlert(error: NSError) {
+        SwiftSpinner.hide()
         dismissKeyboard()
         emailTextField.shake()
         passwordTextField.shake()
         errorLabel.fadeTransition(0.4)
         self.errorLabel.textColor = .redColor()
         self.errorLabel.text = error.localizedDescription
-        SwiftSpinner.hide()
     }
     
     func dismissKeyboard() {
@@ -73,8 +79,8 @@ class RegistrationViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(sender: UIButton) {
-        
-        if type == 2 {
+        FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
+        if type == LOGIN {
             dismissKeyboard()
             if emailTextField.text == "" || passwordTextField.text == "" {
                 self.dismissKeyboard()
@@ -86,54 +92,47 @@ class RegistrationViewController: UIViewController {
             } else {
                 SwiftSpinner.show("Logging In...")
                 FIRAuth.auth()?.signInWithEmail(emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
-                    
-                    if let user = FIRAuth.auth()?.currentUser {
-                        print(user.email)
-                        print(user.emailVerified)
-                        
-                        if user.emailVerified == false {
-                            self.dismissKeyboard()
-                            self.emailTextField.shake()
-                            self.passwordTextField.shake()
-                            self.errorLabel.fadeTransition(0.4)
-                            self.errorLabel.text = "E-mail not verified. Please verify your e-mail first."
-                            self.errorLabel.textColor = .redColor()
-                        } else {
-                            if error != nil {
-                                print(error)
-                                self.showAlert(error!)
+                    SwiftSpinner.hide()
+                    if error != nil {
+                        self.dismissKeyboard()
+                        self.emailTextField.shake()
+                        self.passwordTextField.shake()
+                        self.errorLabel.fadeTransition(0.4)
+                        self.errorLabel.text = error!.localizedDescription
+                        self.errorLabel.textColor = .redColor()
+                    } else {
+                        if let user = FIRAuth.auth()?.currentUser {
+                            print(user.email)
+                            print(user.emailVerified)
+                            if user.emailVerified == false {
+                                self.dismissKeyboard()
+                                self.emailTextField.shake()
+                                self.passwordTextField.shake()
+                                self.errorLabel.fadeTransition(0.4)
+                                self.errorLabel.text = "E-mail not verified. Please verify your e-mail first."
+                                self.errorLabel.textColor = .redColor()
                             } else {
                                 print("Logged in")
                                 self.checkForAdmin(user.email!)
-                                SwiftSpinner.hide()
                             }
-                        }
-                    } else {
-                        if error != nil {
-                            print(error)
-                            self.showAlert(error!)
                         }
                     }
                 })
             }
-        } else { // type == .SignUp
+        } else {
+            // type == REGISTER
             dismissKeyboard()
             if emailTextField.text == "" || passwordTextField.text == "" {
-                
                 self.dismissKeyboard()
                 self.emailTextField.shake()
                 self.passwordTextField.shake()
                 self.errorLabel.fadeTransition(0.4)
                 self.errorLabel.text = "Enter your e-mail and password."
                 self.errorLabel.textColor = .redColor()
-                
             } else {
                 let domain = String(emailTextField.text!.characters.suffix(10))
-                
                 if domain == "@nu.edu.kz" {
-                    
                     FIRAuth.auth()?.createUserWithEmail(emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
-                        
                         if error != nil {
                             print(error)
                             self.showAlert(error!)
@@ -154,9 +153,7 @@ class RegistrationViewController: UIViewController {
                             }
                         }
                     })
-
                 } else {
-                    
                     dismissKeyboard()
                     emailTextField.shake()
                     passwordTextField.shake()
@@ -169,10 +166,8 @@ class RegistrationViewController: UIViewController {
     }
     
     func checkForAdmin(email: String) {
-           
         NSUserDefaults.standardUserDefaults().setBool(false, forKey: "admin")
         NSUserDefaults.standardUserDefaults().synchronize()
-            
         let newRef = FIRDatabase.database().reference().child("admins")
         newRef.observeEventType(.Value) {
             (snap: FIRDataSnapshot) in
@@ -190,18 +185,18 @@ class RegistrationViewController: UIViewController {
     }
     
     @IBAction func toggleLoginSignUp(sender: UIButton) {
-        
         print(type)
-        
-        if type == 2 { // Login
+        if type == LOGIN {
+            // Login
             print("login")
-            type = 1
+            type = REGISTER
             loginButton.setTitle("Sign Up", forState: .Normal)
             toggleButton.setTitle("Have an account? Login", forState: .Normal)
             forgotButton.setTitle("", forState: .Normal)
-        } else { // SignUp
+        } else {
+            // SignUp
             print("sing up")
-            type = 2
+            type = LOGIN
             loginButton.setTitle("Log In", forState: .Normal)
             toggleButton.setTitle("Don't have an account? Sign Up", forState: .Normal)
             forgotButton.setTitle("Forgot Password?", forState: .Normal)
