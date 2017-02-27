@@ -105,21 +105,33 @@ class GlobalScoreViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func extractFullName(email: String) -> String {
-        var fname = "", lname = ""
         var arr = Array(email.characters)
+        var firstname = ""
+        var lastname = ""
         var i = 0
+        var newLen = arr.count - 1
         
-        while arr[i] != "." {
-            fname += String(arr[i])
+        while arr[newLen] != "@" {
+            newLen -= 1
+        }
+        
+        while i < newLen && arr[i] != "." {
+            firstname += String(arr[i])
             i = i + 1
         }
         i = i + 1
-        while arr[i] != "@" {
-            lname += String(arr[i])
+        while i < newLen {
+            lastname += String(arr[i])
             i = i + 1
         }
         
-        return fname.capitalizingFirstLetter() + " " + lname.capitalizingFirstLetter()
+        if lastname != "" {
+            return firstname.capitalizingFirstLetter() + " " + lastname.capitalizingFirstLetter()
+        } else {
+            let index = firstname.startIndex
+            let index2 = index.successor()
+            return firstname.substringToIndex(index2).capitalizingFirstLetter() + " " + firstname.substringFromIndex(index2).capitalizingFirstLetter()
+        }
     }
 
 }
